@@ -24,6 +24,10 @@ import kotlinx.coroutines.*
  */
 class VoiceAssistantInteractionService : VoiceInteractionService() {
 
+    companion object {
+        const val TAG = "VoiceAssistantInteractionService"
+    }
+
     override fun onReady() {
         super.onReady()
         Log.i(TAG, "VoiceAssistantInteractionService ready")
@@ -66,7 +70,6 @@ class VoiceAssistantSession(context: Context) : VoiceInteractionSession(context)
         tvStatus?.text = "正在聆听..."
         tvResult?.text = ""
 
-        // 启动语音识别
         if (modelManager.isASRModelLoaded()) {
             scope.launch(Dispatchers.IO) {
                 try {
@@ -75,7 +78,6 @@ class VoiceAssistantSession(context: Context) : VoiceInteractionSession(context)
                             tvResult?.text = text
                             if (isFinal) {
                                 tvStatus?.text = "识别完成"
-                                // 可以在这里接入 LLM 进行回复
                                 handleCommand(text)
                             }
                         }
@@ -96,7 +98,6 @@ class VoiceAssistantSession(context: Context) : VoiceInteractionSession(context)
     }
 
     private fun handleCommand(text: String) {
-        // 简单的命令处理逻辑
         val response = when {
             text.contains("时间") || text.contains("几点") -> {
                 val time = java.text.SimpleDateFormat("HH:mm", java.util.Locale.CHINA)
@@ -110,7 +111,6 @@ class VoiceAssistantSession(context: Context) : VoiceInteractionSession(context)
 
         tvResult?.text = response
 
-        // TTS 回复
         scope.launch(Dispatchers.IO) {
             try {
                 val audio = ttsEngine.synthesize(response)
