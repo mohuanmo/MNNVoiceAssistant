@@ -60,12 +60,13 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
     implementation 'androidx.activity:activity-ktx:1.8.2'
 
-    // MNN Core
-    implementation 'com.alibaba.android.mnn:mnn:2.8.0'
+    // MNN Core - 如需真实推理，请从 GitHub Release 下载 mnn-android.aar 放入 app/libs/
+    // 下载地址: https://github.com/alibaba/MNN/releases
+    // 放入后取消下面注释:
+    // implementation files('libs/mnn-android.aar')
 
-    // Sherpa-MNN (语音ASR/TTS)
-    // 注意：实际使用时需要引入sherpa-mnn的AAR或自行编译JNI
-    // implementation files('libs/sherpa-mnn.aar')
+    // Sherpa-MNN (语音ASR/TTS) - 如需真实推理，下载 sherpa-mnn-android.aar 放入 app/libs/
+    // implementation files('libs/sherpa-mnn-android.aar')
 
     // 音频处理
     implementation 'androidx.media:media:1.7.0'
