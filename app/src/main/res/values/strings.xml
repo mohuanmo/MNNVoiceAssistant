@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MNN 语音助手</string>
+    <string name="tts_engine_label">MNN TTS 引擎</string>
+    <string name="tts_engine_name">MNNVoiceTTS</string>
+    <string name="title_model_manager">模型管理</string>
+    <string name="title_asr">语音识别 (ASR)</string>
+    <string name="title_tts">语音合成 (TTS)</string>
+    <string name="hint_import_model">点击导入 MNN 模型文件</string>
+    <string name="btn_import_asr">导入 ASR 模型</string>
+    <string name="btn_import_tts">导入 TTS 模型</string>
+    <string name="btn_start_record">按住说话</string>
+    <string name="btn_stop_record">松开结束</string>
+    <string name="btn_speak">朗读文本</string>
+    <string name="hint_input_text">输入要合成的文本...</string>
+    <string name="status_ready">就绪</string>
+    <string name="status_listening">正在聆听...</string>
+    <string name="status_recognizing">识别中...</string>
+    <string name="status_synthesizing">合成中...</string>
+    <string name="status_playing">播放中...</string>
+    <string name="msg_model_not_loaded">请先导入模型</string>
+    <string name="msg_set_default_assistant">设为默认数字助理</string>
+</resources>
